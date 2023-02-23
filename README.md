@@ -1,2 +1,2 @@
 # Sprout
- Simple smarthome controller
+ Simple smarthome controller created by Xamarin
