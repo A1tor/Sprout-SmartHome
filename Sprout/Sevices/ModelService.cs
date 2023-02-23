@@ -25,9 +25,9 @@ namespace Sprout.Sevices
             await db.CreateTableAsync<DeviceModelTemplate>();
 
             await db.DeleteAllAsync<DeviceModelTemplate>();
-            await AddModel("Хаб", "https://sun9-west.userapi.com/sun9-15/s/v1/ig2/OM79Scrz7dJs38nEu0UzUVAEQGJA36KUFBuNukWE7R20R1HCXO1vKX93M4TGpLweEMtV76igdhyw4CrVntpFzrzZ.jpg?size=540x540&quality=96&type=album");
-            await AddModel("Умная лампочка", "https://sun9-west.userapi.com/sun9-53/s/v1/ig2/YumVoIcI_auFuiY17Q7wlxqSW6MqBDH9LZu4sGhMG9z9kjhasmJocdho_7tIl0-7vXPXvBvcT5eEmYdpsX6mH0Bk.jpg?size=540x540&quality=96&type=album");
-            await AddModel("Датчик звука", "https://sun9-east.userapi.com/sun9-20/s/v1/ig2/W8IEQSb60UuEhCatzffSfxm-54AC7kOFJ4YOwipQv0MUT-4IZ8fQbEJoG3l-I4T1bD-eqIFIummcTmeQpgkO5t_q.jpg?size=540x540&quality=96&type=album");
+            await AddModel("Хаб", "https://github.com/A1tor/Sprout-SmartHome/blob/main/Pic/Hub.png?raw=true");
+            await AddModel("Умная лампочка", "https://github.com/A1tor/Sprout-SmartHome/blob/main/Pic/Bulb.png?raw=true");
+            await AddModel("Датчик звука", "https://github.com/A1tor/Sprout-SmartHome/blob/main/Pic/Sound%20sensor.png?raw=true");
 
         }
         public async Task AddModel(string name, string image)

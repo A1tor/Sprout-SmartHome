@@ -24,9 +24,9 @@ namespace Sprout.Sevices
             db = new SQLiteAsyncConnection(databasePath);
             await db.CreateTableAsync<RoomModelTemplate>();
             await db.DeleteAllAsync<RoomModelTemplate>();
-            await AddRoom("Прихожая", "https://sun9-east.userapi.com/sun9-32/s/v1/ig2/TKqEaqpdzLhTi1r1viYKrwZidc2B9hF-_ncLFEp2Jv_R9f-vqwDWITQSx8N4zbh9xQ6N0TmKjVwygHSF9W-j1sLW.jpg?size=540x540&quality=96&type=album");
+            await AddRoom("Прихожая", "https://github.com/A1tor/Sprout-SmartHome/blob/main/Pic/Armchair.png?raw=true");
             await AddRoom("Спальня", "https://t4.ftcdn.net/jpg/03/27/88/89/360_F_327888967_IlZWB3yXruqImbVhQBDaqneohlzXv4l4.jpg");
-            await AddRoom("Кухня", "https://sun9-east.userapi.com/sun9-18/s/v1/ig2/bLI4bmKWKcikMzT1w-QcLTDeQjiTUM0rcVEN_lvAhbtTDDsOKt0NJRkFbn5sCWYN3nai9vd1eLMsPbN83XV3lo5B.jpg?size=540x540&quality=96&type=album");
+            await AddRoom("Кухня", "https://github.com/A1tor/Sprout-SmartHome/blob/main/Pic/Pot.png?raw=true");
         }
         public async Task AddRoom(string name, string image)
         {

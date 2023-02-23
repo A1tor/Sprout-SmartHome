@@ -687,3 +687,8 @@ C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\android\asset
 C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\android\assets\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\bin\Debug\ru\Sprout.resources.dll
 C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\bin\Debug\ru-RU\Sprout.resources.dll
+C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\res\mipmap-hdpi\sprout.png
+C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\res\mipmap-mdpi\sprout.png
+C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\res\mipmap-xhdpi\sprout.png
+C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\res\mipmap-xxhdpi\sprout.png
+C:\Users\aitor\Desktop\Diploma\Sprout\Sprout.Android\obj\Debug\130\res\mipmap-xxxhdpi\sprout.png
