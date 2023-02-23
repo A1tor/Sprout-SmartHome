@@ -1,14 +1,10 @@
-﻿using MQTTnet;
-using MQTTnet.Client;
-using MvvmHelpers;
+﻿using MvvmHelpers;
 using MvvmHelpers.Commands;
 using Sprout.Models;
 using Sprout.Sevices;
 using Sprout.Views;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -89,7 +85,6 @@ namespace Sprout.ViewModels
         }
         async Task Remove(SmartDevice smartDevice)
         {
-            Console.WriteLine("checked");
             await deviceService.RemoveDevice(smartDevice.Id);
             await Refresh();
         }
