@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Sprout.Views.AddDevicePage"
+        xmlns:viewmodels="clr-namespace:Sprout.ViewModels"
+        Shell.PresentationMode="Modal"
+        xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+        xmlns:model="clr-namespace:Sprout.Models"
+        xmlns:resx="clr-namespace:Sprout.Resx"
+        x:DataType="viewmodels:AddDeviceViewModel"
+        Style="{StaticResource BasePage}"
+        Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <viewmodels:AddDeviceViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="40, 100, 40, 100">
+            <Entry Placeholder="{x:Static resx:AppResources.DeviceName}"
+                   Style="{StaticResource BaseEntry}"
+                   Text="{Binding Name}" 
+                   Margin="0, 0, 0, 20"/>
+            <StackLayout Orientation="Horizontal">
+                <Picker ItemsSource="{Binding ModelTemplates}"
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding SelectedDeviceTemplate}"
+                        Style="{StaticResource BasePicker}"
+                        Title="{x:Static resx:AppResources.DeviceModel}"/>
+                <Image Source="{Binding SelectedDeviceTemplate.Image}" 
+                        Style="{StaticResource SmallIcon}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Picker ItemsSource="{Binding RoomTemplates}"
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding SelectedRoomTemplate}"
+                        Style="{StaticResource BasePicker}"
+                        Title="{x:Static resx:AppResources.DeviceRoom}"/>
+                <Image Source="{Binding SelectedRoomTemplate.Image}" 
+                        Style="{StaticResource SmallIcon}"/>
+            </StackLayout>
+
+            <ActivityIndicator HorizontalOptions="Center"
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}"
+                    VerticalOptions="Center" />
+
+            <Button Command="{Binding SaveCommand}"
+                    Style="{StaticResource LargeButton}"
+                    IsEnabled="{Binding IsNotBusy}"
+                    Text="{x:Static resx:AppResources.Done}"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sprout.Views.DeviceCard"
+             xmlns:models="clr-namespace:Sprout.Models"
+             xmlns:DataType="models:SmartDevice"
+             Padding="10">
+    <Frame Style="{StaticResource DeviceCard}">
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding Image}"
+                        Style="{StaticResource SmallIcon}"/>
+            <StackLayout VerticalOptions="Center">
+                <Label VerticalOptions="Center"
+                        Style="{StaticResource LabelLarge}"
+                        Text="{Binding Name}"/>
+                <Label VerticalOptions="Center"
+                        Style="{StaticResource LabelLarge}"
+                        Text="{Binding Room}"/>
+                <Label VerticalOptions="Center"
+                        Style="{StaticResource LabelSmall}"
+                        Text="{Binding Model}"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</Grid>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sprout.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="Primary">#2196F3</Color>
+
+            <Color x:Key="DarkestGreen">#132a13</Color>
+            <Color x:Key="PrimaryGreen">#4f772d</Color>
+            <Color x:Key="SecondaryGreen">#31572c</Color>
+            <Color x:Key="AccentGreen">#90a955</Color>
+            <Color x:Key="LightestGreen">#ecf39e</Color>
+
+            <Color x:Key="BackgroundLight">#FFFFFF</Color>
+            <Color x:Key="BackgroundDark">#323639</Color>
+
+            <Style x:Key="BasePage" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, 
+                                               Light={StaticResource BackgroundLight}}"/>
+            </Style>
+
+
+            <Style x:Key="DeviceListView" TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="RefreshControlColor" 
+                        Value="{AppThemeBinding 
+                    Dark={StaticResource PrimaryGreen},
+                    Light={StaticResource PrimaryGreen}}"/>
+                <Setter Property="HasUnevenRows" Value="True"/>
+                <Setter Property="SeparatorVisibility" Value="None"/>
+            </Style>
+
+            <Style x:Key="DeviceCard" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding 
+                    Dark={StaticResource PrimaryGreen},
+                    Light={StaticResource AccentGreen}}"/>
+            </Style>
+
+            <Style x:Key="RoomCard" TargetType="Frame">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="CornerRadius" Value="80"/>
+                <Setter Property="BorderColor" Value="{StaticResource SecondaryGreen}"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="LargeButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="RoundButton" TargetType="Button">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+            </Style>
+
+            <Style x:Key="BasePicker" TargetType="Picker">
+                <Setter Property="TextColor" Value="{AppThemeBinding 
+                        Dark={StaticResource LightestGreen},
+                    Light={StaticResource DarkestGreen}}"/>
+                <Setter Property="TitleColor" Value="{AppThemeBinding 
+                        Dark={StaticResource LightestGreen}}"/>
+                <Setter Property="MinimumWidthRequest" Value="300"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="BaseEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="{AppThemeBinding 
+                        Dark={StaticResource LightestGreen},
+                    Light={StaticResource DarkestGreen}}"/>
+            </Style>
+
+            <Style x:Key="BigIcon" TargetType="Image">
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="HeightRequest" Value="200"/>
+            </Style>
+            
+            <Style x:Key="SmallIcon" TargetType="Image">
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="HeightRequest" Value="80"/>
+            </Style>
+
+            <Style x:Key="BaseLabel" TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Dark={StaticResource LightestGreen},
+                    Light={StaticResource DarkestGreen}}" />
+            </Style>
+            
+            <Style x:Key="LabelSmall" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+
+            <Style x:Key="LabelLarge" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

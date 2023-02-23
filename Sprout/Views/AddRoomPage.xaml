@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sprout.Views.AddRoomPage"
+             xmlns:viewmodels="clr-namespace:Sprout.ViewModels"
+             Shell.PresentationMode="Modal"
+             xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+             xmlns:model="clr-namespace:Sprout.Models" 
+             xmlns:resx="clr-namespace:Sprout.Resx"
+             x:DataType="viewmodels:AddRoomViewModel"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <viewmodels:AddRoomViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding Image}"
+                   Style="{StaticResource BigIcon}"/>
+            <Entry Placeholder="{x:Static resx:AppResources.RoomName}"
+                   Style="{StaticResource BaseEntry}"
+                   Text="{Binding Name}"/>
+            <Entry Placeholder="{x:Static resx:AppResources.RoomImage}"
+                   Style="{StaticResource BaseEntry}"
+                   Text="{Binding Image}"/>
+            
+            <ActivityIndicator HorizontalOptions="Center"
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}"
+                    VerticalOptions="Center" />
+
+            <Button Command="{Binding SaveCommand}"
+                    Style="{StaticResource LargeButton}"
+                    IsEnabled="{Binding IsNotBusy}"
+                    Text="{x:Static resx:AppResources.Done}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

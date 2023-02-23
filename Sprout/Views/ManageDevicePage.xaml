@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resx="clr-namespace:Sprout.Resx"
+             x:Class="Sprout.Views.ManageDevicePage"
+             xmlns:model="clr-namespace:Sprout.Models"
+             x:DataType="model:SmartDevice"
+             Style="{StaticResource BasePage}"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     >
+            <Image Style="{StaticResource BigIcon}" 
+                   Source="{Binding Image}"/>
+            <StackLayout Orientation="Horizontal"
+                         Padding="5">
+                <Label HorizontalOptions="End" WidthRequest="180"
+                    Text="{Binding Model, StringFormat='Модель: {0}'}"
+                    Style="{StaticResource LabelSmall}"/>
+                <Label HorizontalOptions="Start"
+                    Text="{Binding Room, StringFormat='Комната: {0}'}"
+                    Style="{StaticResource LabelSmall}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Padding="5">
+                <Label Text="{x:Static resx:AppResources.Measurment}"
+                       HorizontalOptions="Start" 
+                       Style="{StaticResource LabelLarge}"/>
+                <Label x:Name="Measurment_Label"
+                       Text="ожидаются"
+                       HorizontalOptions="End"
+                       Style="{StaticResource LabelLarge}"/>
+            </StackLayout>
+
+            <Entry x:Name="Trigger_entry"
+                   IsVisible="false"
+                Placeholder="Enter trigger"/>
+
+            <Button x:Name="State_Button"
+                    Text="Обновить"
+                    Style="{StaticResource LargeButton}"
+                    Clicked="State_Button_Clicked"/>
+
+            <Button Text="{x:Static resx:AppResources.Done}" 
+                    Style="{StaticResource LargeButton}"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
