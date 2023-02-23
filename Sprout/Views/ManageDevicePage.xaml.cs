@@ -1,14 +1,10 @@
-﻿using MQTTnet.Client;
-using Sprout.Models;
+﻿using Sprout.Models;
 using Sprout.Sevices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Sprout.Views
 {
@@ -16,6 +12,7 @@ namespace Sprout.Views
     public partial class ManageDevicePage : ContentPage
     {
         public string DeviceId { get; set; }
+        string Codename;
         public string State { get; set; }
         public string Measurment { get; set; }
         public SmartDevice CurrentDevice { get; set; }
@@ -30,7 +27,6 @@ namespace Sprout.Views
         {
             base.OnAppearing();
             int.TryParse(DeviceId, out var result);
-            string Codename;
             CurrentDevice = await deviceService.GetDevice(result);
             BindingContext = CurrentDevice;
             MQTTService.mqttClient.ApplicationMessageReceivedAsync += e =>
@@ -80,6 +76,7 @@ namespace Sprout.Views
                 State_Button.Text = State;
             if (Measurment != null)
                 Measurment_Label.Text = Measurment;
+            _ = MQTTService.Publish("state" + Codename);
         }
     }
 }

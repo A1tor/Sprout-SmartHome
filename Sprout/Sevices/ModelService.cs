@@ -1,10 +1,8 @@
 ﻿using Sprout.Models;
 using Sprout.Sevices;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -32,7 +30,6 @@ namespace Sprout.Sevices
         }
         public async Task AddModel(string name, string image)
         {
-            Console.WriteLine("fgdgds");
             await Init();
             var model = new DeviceModelTemplate
             {
